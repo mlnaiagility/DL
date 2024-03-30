@@ -1,0 +1,118 @@
+# import statements
+from pyspark.context import SparkContext
+from pyspark.sql.session import SparkSession
+from pyspark.sql.functions import isnull, when, count, col,avg
+from pyspark.ml.feature import StringIndexer
+from pyspark.ml.feature import VectorAssembler
+from pyspark.ml.regression import LinearRegression
+from pyspark.ml.evaluation import RegressionEvaluator
+from pyspark.ml.feature import VectorAssembler
+ 
+sc = SparkContext.getOrCreate()
+spark = SparkSession(sc) 
+sc.setLogLevel("ERROR")
+Section C.
+Dataset (salaries.csv) is provided and loaded as Spark-DataFrame. Using Spark libraries execute the steps, as questioned below.
+# execute this cell to load the data spark Dataframe
+file_path='salaries.csv' 
+
+#load the data spark Dataframe 
+df=spark.read.format("csv").option("header", "True").option("inferschema","True").load(file_path)
+3.a Spark-SQL ( DataFrame)
+3.a.i. Fetch the count of salaries recorded for the 'work_year' '2023' ? (2 mark)
+df.filter(df.work_year=='2023').count()
+2158
+3.a.ii. What is the avg salary in USD ( salary_in_usd) ? (2 marks)
+ df.agg(avg(col("salary_in_usd"))).show()
++------------------+
+|avg(salary_in_usd)|
++------------------+
+|139416.26439283986|
++------------------+
+
+3.a.iii. What is the avg salary of 'ML Engineer' in USD ? (3 marks)
+ df.filter(df.job_title =='ML Engineer').agg(avg(col('salary_in_usd'))).show()
++------------------+
+|avg(salary_in_usd)|
++------------------+
+|165104.81578947368|
++------------------+
+
+3.a.iv. What are the types based on 'company_size' , print the counts of their unique values for each type.(3 marks)
+ df.groupBy('company_size').count().show()
++------------+-----+
+|company_size|count|
++------------+-----+
+|           L|  481|
+|           M| 3501|
+|           S|  152|
++------------+-----+
+
+PySpark ML
+3.b Using Spark ML execute the steps, as questioned below
+3.b.i. Convert all string columns into numeric values using StringIndexer transformer and make sure now DataFrame does not have any string columns anymore.(5 marks )
+indexer_model = StringIndexer(inputCols = [ "experience_level", "employment_type", "job_title", "salary_currency", 
+                                           "employee_residence","company_location","company_size"],                         
+                         outputCols =["experience_level_indexed", "employment_type_indexed", "job_title_indexed", 
+                                      "salary_currency_indexed", "employee_residence_indexed",
+                                      "company_location_indexed","company_size_indexed"]).fit(df)
+df = indexer_model.transform(df)
+df = df.drop("experience_level", "employment_type", "job_title", "salary_currency", 
+                                           "employee_residence","company_location","company_size")
+df.printSchema()
+root
+ |-- work_year: integer (nullable = true)
+ |-- salary: integer (nullable = true)
+ |-- salary_in_usd: integer (nullable = true)
+ |-- remote_ratio: integer (nullable = true)
+ |-- experience_level_indexed: double (nullable = false)
+ |-- employment_type_indexed: double (nullable = false)
+ |-- job_title_indexed: double (nullable = false)
+ |-- salary_currency_indexed: double (nullable = false)
+ |-- employee_residence_indexed: double (nullable = false)
+ |-- company_location_indexed: double (nullable = false)
+ |-- company_size_indexed: double (nullable = false)
+
+3.b.ii. Using vectorAssembler combines all columns , except target column i.e. 'salary_in_usd', of spark DataFrame into single column (name it as features). Make sure DataFrame now contains only two columns features and salary_in_usd.(5 marks)
+features_col = df.columns
+features_col.remove('salary_in_usd')
+
+# Create the VectorAssembler object
+assembler = VectorAssembler(inputCols= features_col, outputCol= "features")
+df = assembler.transform(df)
+
+df = df.drop('work_year',
+ 'salary',
+ 'remote_ratio',
+ 'experience_level_indexed',
+ 'employment_type_indexed',
+ 'job_title_indexed',
+ 'salary_currency_indexed',
+'employee_residence_indexed',
+'company_location_indexed','company_size_indexed')
+
+df.columns
+['salary_in_usd', 'features']
+3.b.iii. Split the vectorised dataframe into training and test sets with one fourth records being held for testing. (2 marks)
+ df_train , df_test = df.randomSplit([0.75,0.25], seed = 2022)
+3.b.iv. Train default LinearRegression model with features as 'featuresCol' and ‘salary_in_usd’ as label. (3 marks)
+(Use featuresCol="features" and labelCol="salary_in_usd")
+LinearRegression(featuresCol="features", labelCol="salary_in_usd")
+# Build the LogisticRegression object 'lr' by setting the required parameters
+lr = LinearRegression(featuresCol="features", labelCol="salary_in_usd")
+
+# fit the LogisticRegression object on the training data
+lr_model = lr.fit(df_train)
+ 
+3.b.vi. Perform prediction on the testing data and Print RMSE value. (5 marks)
+Hint- use RegressionEvaluator
+RegressionEvaluator(labelCol = "salary_in_usd", predictionCol ="prediction", metricName="rmse")
+ 
+df_prediction = lr_model.transform(df_test)
+df_prediction.show()
+
+
+
+evaluator = RegressionEvaluator(labelCol = "salary_in_usd", predictionCol ="prediction", metricName="rmse")
+rmse = evaluator.evaluate(df_prediction)
+print("RMSE value on test set is  = %g" % rmse)
