@@ -1,0 +1,70 @@
+Write notes on framing the research hypothesis
+Framing a research hypothesis is a critical step in the scientific method. It involves formulating a testable statement based on existing knowledge and theories. Here are some key points to consider when framing a research hypothesis:
+1.	Start with a Research Question: Your hypothesis should be an answer to a specific, focused, and researchable question1.
+2.	Conduct Preliminary Research: Before forming your hypothesis, gather information on the topic to make educated assumptions based on existing theories and studies1.
+3.	Define Your Variables: Clearly identify your independent variable (what you will change or control) and dependent variable (what you will observe and measure). If applicable, note any control or confounding variables1.
+4.	Formulate the Hypothesis: Write a clear and concise statement that reflects your prediction of the relationship between variables. It should be testable through scientific methods like experiments, observations, and statistical analysis2.
+5.	Ensure Testability: The hypothesis must be able to be supported or refuted through empirical evidence. It’s not just a guess but a statement that anticipates a particular outcome1.
+6.	Ethical Considerations: Your hypothesis should respect scientific responsibility and laws that protect socio-cultural and scientific norms3.
+7.	Write an ‘If-Then’ Statement: This helps clarify the action and the expected outcome of your study, providing a structure for your hypothesis4.
+Remember, a well-framed hypothesis is the foundation for a robust research design and meaningful data analysis. It guides the direction of your study and helps you stay focused on your research objectives.
+
+
+Write notes on research hypothesis
+A hypothesis is an assumption or perhaps a tentative explanation for a specific process or phenomenon that has been observed during research. Very often, a hypothesis and a guess are treated the same. However, a hypothesis is a calculated and educated guess proven or disproven through research methods.
+Characteristics of Hypotheis:
+1.	A research hypothesis has to be simple yet clear to look reliable and justifiable enough.
+2.	It has to be precise about the results.
+3.	A research hypothesis should be written in a self-explanatory manner with its significance staying intact.
+4.	If you are developing a relational hypothesis, you need to include the variables and establish an appropriate relationship among them.
+5.	A hypothesis must keep and reflect the scope for further investigations and experiments.
+
+
+Forming a research hypothesis is a critical step in the scientific method. It involves formulating testable statement that can be proven or dis-proven based on knowledge, theory and available information. 
+
+Steps:
+Start with research question
+Conduct preliminary research - Gather information’s around the question
+Identify the dependents and independent variable 
+Formulate hypothesis
+Ensure testability
+
+
+Quantitative and qualitative research are two fundamental approaches to gathering and analyzing data. Here’s a distinction between the two:
+
+Quantitative research is expressed in numbers and graphs. It is used to test or confirm theories and assumptions. This type of research can be used to establish generalizable facts about a topic.
+Common quantitative methods include experiments, observations recorded as numbers, and surveys with closed-ended questions.
+Qualitative research is expressed in words. It is used to understand concepts, thoughts or experiences. This type of research enables you to gather in-depth insights on topics that are not well understood.
+Common qualitative methods include interviews with open-ended questions, observations described in words, and literature reviews that explore concepts and theories.
+
+Both methods are essential for gaining different kinds of knowledge and can complement each other in research. Quantitative research is often more structured and objective, while qualitative research is more exploratory and subjective.
+
+
+Journal metrics measure, compare, and often rank research and scholarly publications. They can also be referred to as journal rankings, journal importance, or a journal's impact. Journal metrics allow scholars and researchers to compare scholarly periodicals. 
+The original citation impact metric is the Journal Impact Factor, created in the 1950s, and available through Thompson Reuters' Journal Citation Reports. More recently, a variety of other free journal metrics have been created, including CiteScore, Eigenfactor, Google Scholar Metrics, SCImago Journal & Country Rank (SJR), and Source Normalized Impact per Paper (SNIP).
+Each journal ranking metric uses its own formula to determine a journal's importance to the research community. Many include counting the number of times the journal has been cited in other works. The differing formulas and methodology mean the results will differ from metric to metric. For example, an Eigenfactor score takes into consideration the size of the journal, allowing larger journals more weight, while other metrics do not take this into account. Comparing results from more than one metric will provide a better picture of the real impact of a journal.
+
+•	Impact Factor: Measures the average number of citations received per paper published in that journal during the two preceding years1.
+•	h-index: Reflects both the number of publications and the number of citations per publication. It’s a measure of the productivity and citation impact of the publications of a scientist or scholar1.
+•	CiteScore: Represents the average citations received per document published in the journal. It’s calculated by dividing the number of citations in one year by the number of documents published in the three previous years2.
+•	SCImago Journal Rank (SJR): Weighs citations based on the source they come from. The subject field, quality, and reputation of the journal have a direct effect on the value of a citation2.
+•	Source Normalized Impact per Paper (SNIP): Measures contextual citation impact by weighting citations based on the total number of citations in a subject field. It helps compare journals across different fields2.
+•	Eigenfactor Score: Rates journals based on the number of times articles from the journal published in the past five years have been cited in the JCR year. It also considers which journals have contributed these citations3.
+
+
+
+
+
+
+
+
+
+Brief about the h and i-10 index
+The h-index and i10-index are metrics used to evaluate the impact and productivity of a researcher’s publications. Here’s a brief overview:
+•	h-index: It measures both the productivity and citation impact of a scientist’s publications. A researcher with an index of h has published h papers, each of which has been cited in other papers at least h times. For example, an h-index of 17 means the researcher has 17 papers that have each been cited at least 17 times1.
+•	i10-index: Introduced by Google Scholar, this index tallies the number of publications with at least 10 citations. An i10-index of 25 means the researcher has 25 papers that have each been cited at least 10 times. It’s a simpler metric that focuses on the quantity of influential papers2.
+These indices help in assessing the significance of a researcher’s work within the academic community. The h-index considers both quantity and impact, while the i10-index focuses on the number of papers with a moderate level of impact.
+
+
+
+
